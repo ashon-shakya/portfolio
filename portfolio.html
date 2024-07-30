@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resume Design Using Grid</title>
+        <style>
+            * {
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .grid-container {
+                display: grid;
+                width: 60%;
+                max-width: 700px;
+                margin: auto;
+                grid-template-columns: max(200px, 30%) 70%;
+                grid-template-rows: 100vh;
+                grid-template-areas: "side main";
+                font-family: math;
+            }
+
+            .side-container {
+                background-color: #2c2c65;
+                grid-area: side;
+
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 200px 175px repeat(2, 200px);
+                padding: 20px;
+
+                grid-template-areas:
+                    "profile"
+                    "contact"
+                    "education"
+                    "skill";
+
+                color: white;
+            }
+
+            .profile {
+                grid-area: profile;
+                align-content: center;
+                text-align: center;
+            }
+
+            .profile img {
+                width: auto;
+                height: 150px;
+                border-radius: 50px;
+                border: 5px white solid;
+            }
+
+            .contact {
+                grid-area: contact;
+            }
+
+            .side-container h2 {
+                border-bottom: 1px white solid;
+                margin-bottom: 10px;
+            }
+
+            .side-container ul {
+                margin-bottom: 10px;
+            }
+            .side-container li {
+                margin-left: 20px;
+            }
+
+            .side-container .details {
+                margin-bottom: 10px;
+            }
+
+            .side-container a {
+                color: rgb(179, 179, 179);
+            }
+
+            .contact .details {
+                font-size: 14px;
+                margin-bottom: 5px;
+                padding-left: 5px;
+            }
+
+            .skill {
+                grid-area: skill;
+            }
+
+            .main-container {
+                background-color: #f1f1f1;
+                grid-area: main;
+
+                padding: 20px;
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: 70px 150px auto;
+                grid-template-areas:
+                    "heading"
+                    "summary"
+                    "work";
+            }
+
+            .main-container h2 {
+                border-bottom: 1px grey solid;
+            }
+
+            .heading {
+                grid-area: heading;
+            }
+
+            .summary {
+                grid-area: summary;
+            }
+
+            .work {
+                grid-area: work;
+            }
+
+            .work .details {
+                padding: 10px;
+            }
+
+            .work li {
+                margin-left: 20px;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="side-container">
+                <div class="profile">
+                    <img src="./profile.jpg" alt="" />
+                </div>
+                <div class="contact">
+                    <h2>Contact</h2>
+                    <div class="details">+61 410 000 000</div>
+                    <div class="details">abc@gmail.com</div>
+                    <div class="details">State 1000</div>
+                    <div class="details"><a href="">www.website.com</a></div>
+                    <div class="details"><a href="">www.linkedin.com</a></div>
+                </div>
+
+                <div class="education">
+                    <h2>Education</h2>
+                    <div class="details">Bachelor's in IT - 2000</div>
+                    <div class="sub-details">
+                        <ul>
+                            <li>ABC University</li>
+                            <li>GPA : 4.0</li>
+                        </ul>
+                    </div>
+                    <div class="details">Masters's in IT - 2000</div>
+                    <div class="details">
+                        <ul>
+                            <li>ABC University</li>
+                            <li>GPA : 4.0</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h2>Skill</h2>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>MongoDB</li>
+                        <li>JavaScript</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-container">
+                <div class="heading">
+                    <h1>Mr. John Doe</h1>
+                    <span>Software Engineer</span>
+                </div>
+
+                <div class="summary">
+                    <h2>Summary</h2>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book.
+                    </p>
+                </div>
+
+                <div class="work">
+                    <h2>Work</h2>
+                    <div class="details">
+                        <h3>ABC Company</h3>
+                        <h4>2010 - 2020 | Software Engineer</h4>
+                        <ul>
+                            <li>
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry.
+                            </li>
+                            <li>
+                                Lorem Ipsum has been the industry's standard
+                                dummy text ever since the 1500s,
+                            </li>
+                            <li>
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry.
+                            </li>
+                            <li>
+                                Lorem Ipsum has been the industry's standard
+                                dummy text ever since the 1500s,
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <h3>ABC2 Company</h3>
+                        <h4>2000 - 2010 | Software Engineer</h4>
+                        <ul>
+                            <li>
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry.
+                            </li>
+                            <li>
+                                Lorem Ipsum has been the industry's standard
+                                dummy text ever since the 1500s,
+                            </li>
+                            <li>
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry.
+                            </li>
+                            <li>
+                                Lorem Ipsum has been the industry's standard
+                                dummy text ever since the 1500s,
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
